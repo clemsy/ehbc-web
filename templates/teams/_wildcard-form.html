@@ -1,4 +1,5 @@
 
+{% set countries = craft.countries.list %}
 
 
 
@@ -142,7 +143,6 @@
                                         <select name="fields[teamCountry]" id="teamCountry">
                                             <option>Select country</option>
 
-                                            {% set countries = craft.countries.list %}
                                             {% for country in countries| supersort('asort', null, SORT_STRING) %}
                                             <option value="{{ country.code }}">{{ country.name }}</option>
                                             {% endfor %}
