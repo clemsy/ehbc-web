@@ -1,0 +1,61 @@
+{% set pages = craft.entries.section('sections').level('<= 1').all() %}
+
+<nav class="navbar is-black">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-left" href="/" style="">
+                <img src="/img/ehba-logo.svg" style="height:60px">
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu ">
+
+            <div class="navbar-end">
+            </div>
+            <div class="navbar-end ">
+                {#
+                <div class="navbar-item">
+                    <a class=" is-white" href="/">
+                        <span>Home</span>
+                    </a>
+                </div>
+                #}
+                {% nav page in pages %}
+                {% if page.hasDescendants() %}
+                <div class="navbar-item has-dropdown is-hoverable is-dark">
+                    <a class="navbar-link">
+                        <span>{{ page.pageMenuTitle }}</span>
+                    </a>
+                    <div class="navbar-dropdown is-transparent">
+                        {% for submenu in page.getDescendants().all() %}
+                        <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
+                            {{submenu.pageTitle}}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% else %}
+                {% if page.slug=='home-page' %}
+
+                <div class="navbar-item">
+                    <a class=" is-white" href="/">
+                        <span>Home</span>
+                    </a>
+                </div>
+                {% else %}
+                <div class="navbar-item {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
+                    <a class="" href="{{ page.getUrl() }}">
+                        <span>{{ page.pageMenuTitle }}</span>
+                    </a>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endnav %}
+            </div>
+        </div>
+    </div>
+</nav>

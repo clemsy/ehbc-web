@@ -1,0 +1,40 @@
+{% extends "/layout" %}
+{# Get the requested entry slug from the URL #}
+{% set requestedSlug = craft.app.request.getSegment(2) %}
+
+{# Fetch the entry with that slug #}
+{% set entry = craft.entries()
+.slug(requestedSlug|literal)
+.one() %}
+{% set pageTitle = entry.pageTitle %}
+{% block content %}
+<div class="is-fullwidth">
+
+
+    <div class="page-content">
+
+
+
+
+        {% if entry.slug!='home-page' %}
+        <h1 class="title is-2">
+            {{entry.sectionTitle}}
+        </h1>
+        {% endif %}
+
+        <div class="content has-text-left">
+            {{entry.pageContent}}
+        </div>
+
+
+
+
+    </div>
+
+
+    {% if requestedSlug == 'wildcard-tournament' %}
+    <hr>
+    {% include '/teams/_wildcard-form' %}
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,212 +1,108 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
-    <title>Welcome to Craft CMS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="referrer" content="origin-when-cross-origin" />
-    <style>
-        html,
-        body {
-            font-size: 16px;
-            -webkit-text-size-adjust: 100%;
-            height: 100%;
-            font-family: system-ui, BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        }
+{% extends "/layout" %}
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: hsl(212, 10%, 93%);
-            color: hsl(212, 20%, 20%);
-            display: flex;
-        }
+{% set homepage = true %}
+{% block content %}
 
-        h1 {
-            margin-top: 0;
-        }
+    <div style="margin-top:3rem;padding:1rem" class="modal-card-body">
 
-        h2 {
-            margin-top: 24px;
-            font-size: 1em;
-        }
 
-        h2:first-child {
-            margin-top: 0;
-        }
+        <p style="">
+            <h1 class="title is-3 has-text-centered">EHBC 2019 - Zürich</h1>
+            <h3 class="title is-4 has-text-centered">Wildcard Registration</h3>
+        </p>
 
-        p {
-            line-height: 1.4em;
-            margin-bottom: 1.4em;
-        }
-
-        ul {
-            line-height: 1.3em;
-            padding-left: 20px;
-            margin-bottom: 0;
-        }
-
-        ul li {
-            margin-bottom: 0.35em;
-        }
-
-        a {
-            color: #0d78f2;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .go {
-            color: #0d78f2;
-        }
-
-        .go:after {
-            padding-left: 4px;
-            content: '→';
-            text-decoration: none !important;
-        }
-
-        small {
-            color: #777;
-        }
-
-        code {
-            display: inline-block;
-            color: #da513d;
-            padding: 0 2px;
-            background: hsl(212, 10%, 96%);
-            border-radius: 3px;
-            line-height: 1.3;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.9em;
-        }
-
-        #container {
-            flex-grow: 1;
-        }
-
-        #modal {
-            background: #fff;
-        }
-
-        #aside {
-            background: hsl(212, 10%, 93%);
-        }
-
-        .content {
-            padding: 35px;
-            padding-left: calc(35px + env(safe-area-inset-left));
-            padding-right: calc(35px + env(safe-area-inset-right));
-        }
-
-        @media (min-width:480px) {
-            body {
-                background-image: url("{{ view.getAssetManager().getPublishedUrl('@app/web/assets/installer/dist', true, 'images/install-bg-1920.png') }}");
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center center;
-            }
-
-            #container {
-                display: flex;
-                align-items: normal;
-                justify-content: normal;
-            }
-        }
-
-        @media (min-width:480px) and (min-height: 376px) {
-            #container {
-                padding: 24px;
-                align-items: center;
-                justify-content: center;
-            }
-
-            #modal {
-                height: 100%;
-                max-width: 770px;
-                max-height: 510px;
-                border-radius: 4px;
-                overflow: auto;
-                box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
-            }
-
-            #aside {
-                background: #f9f9f9;
-                overflow: auto;
-            }
-        }
-
-        @media (min-width:768px) {
-            #modal {
-                display: flex;
-            }
-
-            #main {
-                width: 50%;
-                overflow: auto;
-            }
-
-            #aside {
-                width: 50%;
-                overflow: auto;
-            }
-        }
-
-        @media only screen and (min-width: 1921px) {
-            body {
-                background-image: url("{{ view.getAssetManager().getPublishedUrl('@app/web/assets/installer/dist', true, 'images/install-bg-5120.png') }}");
-            }
-        }
-
-        @media only screen and (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 961px),
-        only screen and (-moz-min-device-pixel-ratio: 1.5) and (min-width: 961px),
-        only screen and (-o-min-device-pixel-ratio: 3/2) and (min-width: 961px),
-        only screen and (min-device-pixel-ratio: 1.5) and (min-width: 961px),
-        only screen and (min-resolution: 1.5dppx) and (min-width: 961px) {
-            body {
-                background-image: url("{{ view.getAssetManager().getPublishedUrl('@app/web/assets/installer/dist', true, 'images/install-bg-5120.png') }}");
-            }
-        }
-    </style>
-</head>
-<body class="ltr">
-<div id="container">
-    <div id="modal">
-        <div id="main">
-            <div class="content">
-                <h1>Welcome</h1>
-                <p>Thanks for installing Craft CMS!</p>
-                <p>You’re looking at the <code>index.html</code> template file located in your
-                    <code>templates/</code> folder. Once you’re ready to start building out your site’s
-                    front end, you can replace this with something custom.</p>
-                <p>If you’re new to Craft CMS, take some time to check out the resources on the right
-                    when you get a chance&mdash;especially
-                    <a href="https://craftcms.com/discord" target="_blank">Discord</a>
-                    and <a href="http://craftcms.stackexchange.com/" target="_blank">Stack Exchange</a>.
-                    The Craft community is full of smart, friendly, and helpful people!</p>
-                <p><span class="go"><a href="{{ cpUrl('') }}">Go to your Control Panel</a></span></p>
-            </div>
+        <div class="has-text-centered">
+            Registration for 12 Open Slots in the EHBC Wildcard Event will be <strong>here</strong> in:
         </div>
-        <div id="aside">
-            <div class="content">
-                <h2>Popular Resources</h2>
-                <ul>
-                    <li><a href="http://docs.craftcms.com/v3/" target="_blank">Documentation</a><br><small>Read the official docs.</small></li>
-                    <li><a href="https://craftcms.com/guides" target="_blank">Guides</a><br><small>Follow along with the official guides.</small></li>
-                    <li><a href="https://twitter.com/hashtag/craftcms" target="_blank">#craftcms</a><br><small>See the latest tweets about Craft.</small></li>
-                    <li><a href="https://craftcms.com/discord" target="_blank">Discord</a><br><small>Meet the community.</small></li>
-                    <li><a href="http://craftcms.stackexchange.com/" target="_blank">Stack Exchange</a><br><small>Get help and help others.</small></li>
-                    <li><a href="https://craftquest.io/" target="_blank">CraftQuest</a><br><small>Watch unlimited video lessons and courses.</small></li>
-                    <li><a href="http://craftlinklist.com/" target="_blank">Craft Link List</a><br><small>Stay in-the-know.</small></li>
-                    <li><a href="https://nystudio107.com/blog" target="_blank">nystudio107 Blog</a><br><small>Learn Craft and modern web development.</small></li>
-                </ul>
+
+        <p id="demo"></p>
+
+        <div class="has-text-centered" style="margin-top:2rem">
+            <p>
+                <strong>Important:</strong> Refresh the page when the countdown is at 00:00:00 and fill the form if you do not have a slot yet!
+            </p>
+
+
+            <h3 class="title is-4" style="margin-top: 1rem"> Rules:</h3>
+
+            <div class="has-text-left" style="padding-left: 0">
+                <ol>
+                    <li>
+                        Teams need to be composed of 2/3 European players
+                        <ul>
+                            <li>
+                                No TBA's
+                            </li>
+                            <li>
+                                No player who is already qualified for the Main Event is allowed to substitute in the Wildcard
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        The Slots will be given to the 12 fastest teams to submit the form correctly filled ("first come, first served")
+                        <ul>
+                            <li>
+                                We allow the fastest 6 teams composed of players from 3 different regions ("international teams") a guarenteed slot
+                            </li>
+                            <li>
+                                Registration will be open for 1 hour
+                            </li>
+                            <li>
+                                If less than 12 teams register until then, every team who registered will have a guaranteed slot and registration will stay open
+                            </li>
+                            <li>
+                                If there are more than 12 teams, we will put teams on the waiting list by time of registration
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        If more slots become available later, the highest team on the waiting list gets the slot
+                    </li>
+
+                </ol>
             </div>
+            <br><br>
+            <h5 class="title is-3">
+                We wish you all good luck with the registration!
+            </h5>
+            ﻿            <br><br>
+
         </div>
     </div>
-</div>
-</body>
-</html>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("June 10, 2019 20:00:00").getTime();
+
+    var utcDate1 = new Date(Date.UTC(2019, 5, 10, 18, 0, 0));
+
+    countDownDate = utcDate1.getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is over, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+{% endblock %}

@@ -1,0 +1,233 @@
+
+
+
+
+
+<section class="modal-card-body">
+
+    {% macro errorList(errors) %}
+    {% if errors %}
+    <ul class="errors">
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endmacro %}
+
+    {% if entry.errors is defined %}
+    {% for errorField, error in entry.errors %}
+    {% for errorMessage in error %}
+    <ul class="form-errors">
+        <li>{{ errorField }} - {{ errorMessage }}</li>
+    </ul>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% from _self import errorList %}
+
+
+    <div class="content">
+        <div class="has-text-centered" style="margin-top:2rem">
+            <p>
+                <strong>Important:</strong> Refresh the page when the countdown is at 00:00:00 and fill the form if you do not have a slot yet!
+            </p>
+
+
+            <h3 class="title is-4" style="margin-top: 1rem"> Rules:</h3>
+
+            <div class="has-text-left" style="padding-left: 0">
+                <ol>
+                    <li>
+                        Teams need to be composed of 2/3 European players
+                        <ul>
+                            <li>
+                                No TBA's
+                            </li>
+                            <li>
+                                No player who is already qualified for the Main Event is allowed to substitute in the Wildcard
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        The Slots will be given to the 12 fastest teams to submit the form correctly filled ("first come, first served")
+                        <ul>
+                            <li>
+                                We allow the fastest 6 teams composed of players from 3 different regions ("international teams") a guarenteed slot
+                            </li>
+                            <li>
+                                Registration will be open for 1 hour
+                            </li>
+                            <li>
+                                If less than 12 teams register until then, every team who registered will have a guaranteed slot and registration will stay open
+                            </li>
+                            <li>
+                                If there are more than 12 teams, we will put teams on the waiting list by time of registration
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        If more slots become available later, the highest team on the waiting list gets the slot
+                    </li>
+
+                </ol>
+            </div>
+            <h5 class="title is-3">
+                We wish you all good luck with the registration!
+            </h5>
+            ﻿<hr>
+        </div>
+    </div>
+
+    <form method="post" action="?" accept-charset="UTF-8">
+
+
+        {{ csrfInput() }}
+
+
+        <input type="hidden" name="action" value="guest-entries/save">
+        <input type="hidden" name="sectionUid" value="9e95c96f-502f-4eeb-a3ec-cdad22ea197a">
+        <input id="slug" type="hidden" name="slug" value="{{'now'|date('U') }}">
+        {{ redirectInput('teams/success') }}
+
+
+                    <h3 class="title is-4">Team Info</h3>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="teamName">Team Name</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input" type="text" placeholder="Team Name" id="teamName" name="fields[teamName]" {%- if entry is defined %} value="{{ entry.teamName }}"{% endif %}>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if entry is defined %}
+                    <p class="help is-danger">
+                        {{ errorList(entry.getErrors('teamName')) }}
+                    </p>
+                    {% endif %}
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="teamContactEmail">Team Contact Email</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control">
+                                    <input class="input" type="text" placeholder="Team Contact Email" id="teamContactEmail" name="fields[teamContactEmail]" {%- if entry is defined %} value="{{ entry.teamContactEmail }}"{% endif %}>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% if entry is defined %}
+                    <p class="help is-danger">
+                        {{ errorList(entry.getErrors('teamName')) }}
+                    </p>
+                    {% endif %}
+
+
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="teamCountry">Team Country</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field is-narrow">
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select name="fields[teamCountry]" id="teamCountry">
+                                            <option>Select country</option>
+
+                                            {% set countries = craft.countries.list %}
+                                            {% for country in countries| supersort('asort', null, SORT_STRING) %}
+                                            <option value="{{ country.code }}">{{ country.name }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {% for k, player in [1,2,3] %}
+                    <hr>
+                    <h3 class="title is-4">Player {{player}} Info</h3>
+
+                    <!-- player name -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="player{{player}}Name"> Name</label>
+                        </div>
+                        <div class="field-body">
+
+                            <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Player {{player}} Name" id="player{{player}}Name" name="fields[teamPlayer{{player}}Name]" >
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player city -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="teamPlayer{{player}}City"> City</label>
+                        </div>
+                        <div class="field-body">
+
+                            <div class="field">
+                            <p class="control">
+                                <input class="input" type="text" placeholder="Player {{player}} City" id="teamPlayer{{player}}City" name="fields[teamPlayer{{player}}City]" >
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- player country -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label" for="teamPlayer{{player}}Country">Country</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field is-narrow">
+                                <div class="control">
+                                    <div class="select is-fullwidth">
+                                        <select name="fields[teamPlayer{{player}}Country]" id="teamPlayer{{player}}Country">
+                                            <option>Select country</option>
+                                            {% for country in countries| supersort('asort', null, SORT_STRING) %}
+                                            <option value="{{ country.code }}">{{ country.name }}</option>
+                                            {% endfor %}
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <!-- Left empty for spacing -->
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control has-text-right">
+                                    <button type="submit" class="button is-primary">
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+

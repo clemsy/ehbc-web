@@ -20,6 +20,7 @@
 return [
     'modules' => [
         'my-module' => \modules\Module::class,
+
     ],
     //'bootstrap' => ['my-module'],
 ];

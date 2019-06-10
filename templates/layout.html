@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if pageTitle is defined %}{{ pageTitle }} - {% endif %} EHBC Zürich - 2019 European Hardcourt Bike Polo Championships</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <style>
+        p#demo {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+        }
+        ul,ol {
+            margin-left:2rem;
+        }
+        ul li {
+            padding-left: 3.3em ;
+        }
+
+        ul li:before {
+            content: "·";
+            display: inline-block;
+            margin-left: -1.3em;
+            width: 1.3em;
+        }
+    </style>
+
+</head>
+<body class="is-dark">
+
+<section class="hero is-medium is-bold">
+    <div class="hero-head" style="text-align:center" >
+        {# include '_nav' #}
+        <img src="/images/banner.png">
+    </div>
+</section>
+
+<section class="section is-paddingless">
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</section>
+
+<footer class="footer is-hidden ">
+    <div class="content has-text-centered is-small">
+        EHBA &copy {{ "now"|date("Y") }} - <a href="">facebook</a> - <a href="">instagram</a> - <a href="{{url('ehbc/contact')}}">contact</a>
+    </div>
+</footer>
+
+<script async type="text/javascript" src="/js/bulma.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://unpkg.com/flickity-bg-lazyload@1/bg-lazyload.js"></script>
+<script>
+
+    var $carousel = $('.fcarousel').flickity({
+        cellAlign: 'center',
+        imagesLoaded: true,
+        bgLazyLoad: true,
+        autoPlay: 1500,
+        pauseAutoPlayOnHover: false,
+        percentPosition: true,
+        wrapAround: true
+    });
+
+
+</script>
+
+</body>
+
+</html>
