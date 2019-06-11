@@ -1,10 +1,11 @@
 {% set pages = craft.entries.section('sections').level('<= 1').all() %}
 
-<nav class="navbar is-black">
+<div class="container">
+<nav class="navbar is-dark has-background-black">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item has-text-left" href="/" style="">
-                <img src="/img/ehba-logo.svg" style="height:60px">
+            <a class="navbar-item has-text-left is-hidden" href="/" style="">
+                Home
             </a>
             <span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
@@ -12,25 +13,23 @@
                             <span></span>
                         </span>
         </div>
-        <div id="navbarMenu" class="navbar-menu ">
+        <div id="navbarMenu" class="navbar-menu is-dark">
 
-            <div class="navbar-end">
-            </div>
+
+
             <div class="navbar-end ">
-                {#
                 <div class="navbar-item">
                     <a class=" is-white" href="/">
                         <span>Home</span>
                     </a>
                 </div>
-                #}
                 {% nav page in pages %}
                 {% if page.hasDescendants() %}
-                <div class="navbar-item has-dropdown is-hoverable is-dark">
-                    <a class="navbar-link">
+                <div class="navbar-item has-dropdown  is-hoverable  is-dark has-background-black">
+                    <a class="navbar-link is-arrowless">
                         <span>{{ page.pageMenuTitle }}</span>
                     </a>
-                    <div class="navbar-dropdown is-transparent">
+                    <div class="navbar-dropdown  is-dark has-background-black">
                         {% for submenu in page.getDescendants().all() %}
                         <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
                             {{submenu.pageTitle}}
@@ -59,3 +58,4 @@
         </div>
     </div>
 </nav>
+</div>

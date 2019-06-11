@@ -35,20 +35,33 @@
              background-image: url("/images/bg_tile_orange.png");
              background-repeat: repeat;
          }
+        html {
+            background: -moz-linear-gradient((#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            background: -webkit-gradient(#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            background: -webkit-linear-gradient(#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            background: -o-linear-gradient(#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            background: -ms-linear-gradient(#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            background: linear-gradient(#ffa44d, #B17235), url('/images/bg_tile_orange.png') repeat;
+            height: 200px;
+
+        }
     </style>
 
 </head>
 <body class="is-dark">
 
 <section class="hero is-medium is-bold">
-    <div class="hero-head" style="text-align:center" >
-        {# include '_nav' #}
-        <img src="/images/banner.png">
+    <div class="container" style="text-align:center" >
+        <img src="/images/banner.png" width="100%" style="width: 960px;margin-top: 1rem">
+        {% include '_nav' %}
+    </div>
+    <div>
+
     </div>
 </section>
 
-<section class="section is-paddingless">
-    <div class="container">
+<section class="section ">
+    <div class="container" style="">
         {% block content %}
 
         {% endblock %}

@@ -1,10 +1,13 @@
 @charset "utf-8";
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@font-face {
+  font-family: "Slash";
+  src: url("/fonts/slash.ttf");
+}
 
 // Set your brand colors
-$purple: #ffa44d;
+$orange: #ffa44d;
+$orange: #ffa44d;
 $pink: black;
 $brown: #757763;
 $beige-light: #ffffff;
@@ -14,13 +17,14 @@ $beige-lighter: #ffffff;
 $family-sans-serif: "Helvetica", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$primary: $purple;
-$link: $pink;
-$widescreen-enabled: true;
+$primary: $orange;
+$link: $orange;
+$widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: #ffa44d;
+$body-background-color: $orange;
+
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -35,4 +39,33 @@ $input-shadow: none;
 @import "../node_modules/bulma/sass/components/navbar.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
+
+
+html, body {
+  background-color: linear-gradient(#ffa44d, #B17235);
+}
+$navbar-dropdown-border-top: 0;
+$navbar-dropdown-item-hover-background-color: black;
+.navbar-end {
+  text-transform: uppercase;
+  font-family: Slash;
+  color: #fff;
+}
+nav a,
+a.navbar-link span {
+  color: #fff;
+  display: inline-block;
+  margin-right: 1rem;
+}
+nav a:hover {
+  color: $orange;
+}
+
+h1.title,
+h2.title,
+h3.title
+{
+  text-transform: uppercase;
+  font-family: Slash;
+}
 
