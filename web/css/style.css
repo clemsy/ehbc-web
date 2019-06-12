@@ -3859,14 +3859,16 @@ html, body {
 
 .navbar-end {
   text-transform: uppercase;
-  font-family: Slash;
+  font-family: Slash, "Arial Rounded MT Bold";
   color: #fff; }
+
+nav a:last-child:not(.navbar-item-home) {
+  margin-right: 1rem; }
 
 nav a,
 a.navbar-link span {
   color: #fff;
-  display: inline-block;
-  margin-right: 1rem; }
+  display: inline-block; }
 
 nav a:hover {
   color: #ffa44d; }

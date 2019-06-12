@@ -48,14 +48,18 @@ $navbar-dropdown-border-top: 0;
 $navbar-dropdown-item-hover-background-color: black;
 .navbar-end {
   text-transform: uppercase;
-  font-family: Slash;
+  font-family: Slash, "Arial Rounded MT Bold";
   color: #fff;
+
+}
+
+nav a:last-child:not(.navbar-item-home) {
+  margin-right:1rem;
 }
 nav a,
 a.navbar-link span {
   color: #fff;
   display: inline-block;
-  margin-right: 1rem;
 }
 nav a:hover {
   color: $orange;

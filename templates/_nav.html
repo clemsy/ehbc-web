@@ -18,41 +18,43 @@
 
 
             <div class="navbar-end ">
-                <div class="navbar-item">
-                    <a class=" is-white" href="/">
+
+                <div class="navbar-item ">
+                    <a class="navbar-item-home is-white" href="/">
                         <span>Home</span>
                     </a>
                 </div>
                 {% nav page in pages %}
-                {% if page.hasDescendants() %}
-                <div class="navbar-item has-dropdown  is-hoverable  is-dark has-background-black">
-                    <a class="navbar-link is-arrowless">
-                        <span>{{ page.pageMenuTitle }}</span>
-                    </a>
-                    <div class="navbar-dropdown  is-dark has-background-black">
-                        {% for submenu in page.getDescendants().all() %}
-                        <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
-                            {{submenu.pageTitle}}
-                        </a>
-                        {% endfor %}
-                    </div>
-                </div>
-                {% else %}
-                {% if page.slug=='home-page' %}
+                    {% if page.hasDescendants() %}
+                    <div class="navbar-item has-dropdown  is-hoverable  is-dark is-transparent has-background-black">
 
-                <div class="navbar-item">
-                    <a class=" is-white" href="/">
-                        <span>Home</span>
-                    </a>
-                </div>
-                {% else %}
-                <div class="navbar-item {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
-                    <a class="" href="{{ page.getUrl() }}">
-                        <span>{{ page.pageMenuTitle }}</span>
-                    </a>
-                </div>
-                {% endif %}
-                {% endif %}
+                        <a class="navbar-link is-arrowless">
+                            <span>{{ page.pageMenuTitle }} {{page.level}}</span>
+                        </a>
+                        <div class="navbar-dropdown  is-dark has-background-black">
+                            {% for submenu in page.getDescendants().all() %}
+                            <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
+                                {{submenu.pageTitle}} {{page.level}}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% else %}
+                        {% if page.slug=='home-page' %}
+
+                        <div class="navbar-item">
+                            <a class=" is-white" href="/">
+                                <span>Home</span>
+                            </a>
+                        </div>
+                        {% elseif page.level < 2 %}
+                        <div class="navbar-item {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
+                            <a class="" href="{{ page.getUrl() }}">
+                                <span>{{ page.pageMenuTitle }} {{page.level}}</span>
+                            </a>
+                        </div>
+                        {% endif %}
+                    {% endif %}
                 {% endnav %}
             </div>
         </div>
