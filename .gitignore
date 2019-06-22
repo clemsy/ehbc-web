@@ -5,3 +5,5 @@
 /web/node_modules
 /storage
 .DS_Store
+
+web/fonts/Slash\.ttf

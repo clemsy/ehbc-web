@@ -29,12 +29,12 @@
                     <div class="navbar-item has-dropdown  is-hoverable  is-dark is-transparent has-background-black">
 
                         <a class="navbar-link is-arrowless">
-                            <span>{{ page.pageMenuTitle }} {{page.level}}</span>
+                            <span>{{ page.pageMenuTitle }}</span>
                         </a>
                         <div class="navbar-dropdown  is-dark has-background-black">
                             {% for submenu in page.getDescendants().all() %}
                             <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
-                                {{submenu.pageTitle}} {{page.level}}
+                                {{submenu.pageTitle}}
                             </a>
                             {% endfor %}
                         </div>
@@ -50,7 +50,7 @@
                         {% elseif page.level < 2 %}
                         <div class="navbar-item {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
                             <a class="" href="{{ page.getUrl() }}">
-                                <span>{{ page.pageMenuTitle }} {{page.level}}</span>
+                                <span>{{ page.pageMenuTitle }}</span>
                             </a>
                         </div>
                         {% endif %}
