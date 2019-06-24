@@ -1,0 +1,320 @@
+{% set countries = craft.countries.list %}
+
+<section class="modal-card-body">
+
+
+    {% macro errorList(errors) %}
+        {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endmacro %}
+
+    {% if entry.errors is defined %}
+        {% for errorField, error in entry.errors %}
+            {% for errorMessage in error %}
+            <ul class="form-errors">
+                <li>{{ errorField }} - {{ errorMessage }}</li>
+            </ul>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    {% if entry is defined %}
+
+        OKOOKOKOK
+
+        {% if entry.errors|length > 0 %}
+
+        <div>
+            <h3>There was a problem with your submission:</h3>
+            {% for error in entry.errors %}
+            {% for errormessage in error %}
+            <p>{{errormessage}}</p>
+            {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endif %}
+
+    {% from _self import errorList %}
+
+    <form method="post" action="?" enctype="multipart/form-data" accept-charset="UTF-8">
+        <input name="MAX_FILE_SIZE" type="hidden" value="67108864">
+        {{ csrfInput() }}
+        <input type="hidden" name="action" value="guest-entries/save">
+        <input type="hidden" name="sectionUid" value="9e95c96f-502f-4eeb-a3ec-cdad22ea197a">
+        <input id="slug" type="hidden" name="slug" value="{{'now'|date('U') }}">
+
+        {{ redirectInput('teams/success') }}
+
+        <h3 class="title is-2" style="margin-top: 1rem">Section 1, Team and player information:</h3>
+        <p>
+            This is to know who you are and what event you play. We will double-check this with regional representatives.
+        </p>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamEvent">EHBC Event</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="fields[teamEvent]" id="teamEvent">
+                                <option>Select Event</option>
+                                <option value="EHBC_2019_MAIN"> EHBC 2019 Main Event</option>
+                                <option value="EHBC_2019_WILDCARD">EHBC 2019 Wilcard</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if entry is defined %}
+        <p class="help is-danger">
+            Error : {{ errorList(entry.getErrors('teamEvent')) }}
+        </p>
+        {% endif %}
+
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamName">Team Name</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Team Name" id="teamName" name="fields[teamName]" {%- if entry is defined %} value="{{ entry.teamName }}"{% endif %}>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% if entry is defined %}
+        <p class="help is-danger">
+            {{ errorList(entry.getErrors('teamName')) }}
+        </p>
+        {% endif %}
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamContactEmail"> Contact Email</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Team Contact Email" id="teamContactEmail" name="fields[teamContactEmail]" {%- if entry is defined %} value="{{ entry.teamContactEmail }}"{% endif %}>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% if entry is defined %}
+        <p class="help is-danger">
+            {{ errorList(entry.getErrors('teamName')) }}
+        </p>
+        {% endif %}
+
+
+        {#
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamCountry">Team Country</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="fields[teamCountry]" id="teamCountry">
+                                <option>Select country</option>
+
+                                {% for country in countries| supersort('asort', null, SORT_STRING) %}
+                                <option value="{{ country.code }}">{{ country.name }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        #}
+
+        {% for k, player in [1,2,3] %}
+        <hr>
+        <h3 class="title is-4">Player {{player}} Info</h3>
+
+        <!-- player name -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="player{{player}}Name"> Name</label>
+            </div>
+            <div class="field-body">
+
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Player {{player}} Name" id="player{{player}}Name" name="fields[teamPlayer{{player}}Name]" >
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- player city -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamPlayer{{player}}City"> City</label>
+            </div>
+            <div class="field-body">
+
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="Player {{player}} City" id="teamPlayer{{player}}City" name="fields[teamPlayer{{player}}City]" >
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- player country -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamPlayer{{player}}Country">Country</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="fields[teamPlayer{{player}}Country]" id="teamPlayer{{player}}Country">
+                                <option>Select country</option>
+                                {% for country in countries| supersort('asort', null, SORT_STRING) %}
+                                <option value="{{ country.code }}">{{ country.name }}</option>
+                                {% endfor %}
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <h3 class="title is-4">Picture</h3>
+
+        <!-- player city -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamPicture"> Team Picture</label>
+            </div>
+            <div class="field-body">
+
+                <div class="field">
+                    <p class="control">
+                        <input type="file" class="input" name="fields[teamPicture]" id="teamPicture" placeholder="Team Picture image file">
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<p>
+    <hr>
+</p>
+
+
+
+        <h3 class="title is-2" style="margin-top: 1rem">Section 2, Reffing:</h3>
+        <p>
+            The tournament will not work without Referees. We ask all teams to take part!
+        </p>
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamRefereree">Who is/are the most experienced Referee/s in your team?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {%- if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+        <hr>
+        </p>
+        <h3 class="title is-3" style="margin-top: 1rem">Volunteering:</h3>
+        <p>
+            If you want to volunteer in the event, please let us know what you can do.
+            <br>
+            We will award helpers with tokens for food and drinks.
+        </p>
+        <div class="field ">
+        <div class="field-label is-normal">
+            <label class="label has-text-left" for="teamVolunteering">Do you want to help us?</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+                    <input class="input" type="text" placeholder="" id="teamVolunteering" name="fields[teamVolunteering]" {%- if entry is defined %} value="{{ entry.teamVolunteering }}"{% endif %}>
+                </p>
+            </div>
+        </div>
+    </div>
+
+ <p>
+        <hr>
+        </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 3, Travel:</h3>
+        <p>
+            We give a discount on Main Event (45€/PP instead of 75€/PP) and on Wildcard Event (10€/PP instead of 15€/PP), for every player who goes to EHBC by train (we appreciate if you could present a ticket).
+        </p>
+        <div class="field ">
+        <div class="field-label is-normal">
+            <label class="label has-text-left">Coming by train:</label>
+        </div>
+        <div class="field-body">
+            <div class="field">
+                <p class="control">
+
+                    <label class="checkbox">
+                        <input  type="checkbox" placeholder="" id="player1" name="fields[teamPlayerOneIsTravelingByTrain]" value="1">
+                            Player 1
+                    </label>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+        <p>
+        <hr>
+        </p>
+
+
+
+
+
+
+
+        <p>
+        <hr>
+        </p>
+
+
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <!-- Left empty for spacing -->
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control has-text-right">
+                        <button type="submit" class="button is-primary">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+

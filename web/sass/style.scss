@@ -10,6 +10,7 @@ $orange: #ffa44d;
 $orange: #ffa44d;
 $pink: black;
 $brown: #757763;
+$green: #006f37;
 $beige-light: #ffffff;
 $beige-lighter: #ffffff;
 
@@ -73,3 +74,10 @@ h3.title
   font-family: Slash;
 }
 
+.input, textarea.textarea, .select select {
+  border-color: $orange;
+}
+.input:hover, textarea.textarea:hover, .select select:hover,
+.input:focus, textarea.textarea:focus, .select select:focus {
+  border-color: $green;
+}
