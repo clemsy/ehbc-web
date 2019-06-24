@@ -81,16 +81,22 @@ $form = ActiveForm::begin([
                         )->dropDownList(
                                 [
                                     'General Info'=>'General Info',
-                                    'Rules'=>'Rules',
-                                    'Sponsoring'=>'Sponsoring',
+                                    'Accomodation'=>'Accomodation',
+                                    'Rules'=>'Rules / Reffing',
                                     'Volunteering'=>'Volunteering',
-                                    'Other'=>'Other'
+                                    'Tokens PreOrder'=>'Tokens PreOrder',
+                                    'Tee Shirt PreOrder'=>'Tee Shirt PreOrder'
                                 ],
                                 [
                                         'prompt'=>'Choose...',
                                         'class'=>'select is-fullwidth'
                                     ]
-                        )->label(false); ?>
+                        )->label(false);
+
+                        /*
+                         * 1 general, 2 accommodation, 3 Rules/reffiing, 4 volunteering, 5 tokens pre-order, 6 t-shirts pre-order
+
+                         */?>
                 <p class="control">
 
                 </p>
