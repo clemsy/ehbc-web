@@ -21,7 +21,7 @@
         {% endif %}
 
 
-        <h3 class="is-5 title">Region : {{entry.teamRegion}}</h3>
+        <h4 class="is-5 title">Region : {{entry.teamRegion}}</h4>
 
         <h3 class="is-5 title">Players:</h3>
 
@@ -43,9 +43,17 @@
             </li>
         </ul>
 
-        <hr>
+
+        <h3 class="is-5 title">Last EHBC Ranking:</h3>
+        <div class="content">
+            {{teamLastEhbcRanking}}
+        </div>
 
 
+        <h3 class="is-5 title">Other team informations:</h3>
+        <div class="content">
+            {{teamDescription|nl2br}}
+        </div>
 
 
     </div>
