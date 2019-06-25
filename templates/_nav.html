@@ -43,7 +43,7 @@
                         <div class="navbar-dropdown  is-dark has-background-black">
                             {% for submenu in page.getDescendants().all() %}
                             <a class="navbar-item has-background-black" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
-                                {{submenu.pageTitle}}
+                                {{submenu.pageMenuTitle}}
                             </a>
                             {% endfor %}
                         </div>
