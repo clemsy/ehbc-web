@@ -25,6 +25,10 @@ $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
 $body-background-color: $orange;
+$body-font-size: 1.1em;
+$body-line-height: 1.7;
+$hr-background-color: transparent;
+$strong-color: $orange;
 
 $control-border-width: 2px;
 $input-border-color: transparent;
@@ -72,6 +76,7 @@ h3.title
 {
   text-transform: uppercase;
   font-family: Slash;
+  border-bottom: 1px solid $orange;
 }
 
 .input, textarea.textarea, .select select {
