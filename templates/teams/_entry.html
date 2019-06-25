@@ -6,6 +6,48 @@
 
     <div class="page-content">
 
+        <h1 class="is-3 title">{{entry.teamName}}</h1>
+        <h3 class="is-5 title">Region : {{entry.teamRegion}}</h3>
+
+        {% if entry.teamPicture.one() %}
+        <div class=" is-fullwidth has-text-centered" style="position: relative;max-height:400px">
+            <div class="carousel-legend" style="position: absolute; bottom:0; left:0; right: 0 ;height:auto;background: #E2E2E2;color:black;width:100%;opacity: 0.6">
+                <div class="content has-text-right banner-title">
+                    &copy; {{entry.teamName}}
+                </div>
+            </div>
+            <img src="{{ entry.teamPicture.one().getUrl('teampic') }}" class="" style="width: auto;max-height: 400px">
+
+        </div>
+        {% endif %}
+
+
+
+        <h3 class="is-5 title">Players:</h3>
+
+        <ul>
+            <li>
+                <b>{{entry.teamPlayer1Name}}</b>
+                ({{entry.teamPlayer1City}},
+                {{entry.teamPlayer1Country}})
+            </li>
+            <li>
+                <b>{{entry.teamPlayer2Name}}</b>
+                ({{entry.teamPlayer2City}},
+                {{entry.teamPlayer2Country}})
+            </li>
+            <li>
+                <b>{{entry.teamPlayer3Name}}</b>
+                ({{entry.teamPlayer3City}},
+                {{entry.teamPlayer3Country}})
+            </li>
+        </ul>
+
+        <hr>
+
+
+
+
     </div>
 </div>
 
