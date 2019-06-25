@@ -68,7 +68,7 @@ $form = ActiveForm::begin([
     </div>
     */ ?>
 
-    <div class="field is-horizontal">
+    <div class="field is-horizontal" style="margin-bottom:1rem">
         <div class="field-label is-normal">
             <label class="label">Subject category</label>
         </div>
@@ -91,12 +91,7 @@ $form = ActiveForm::begin([
                                         'class'=>'select is-fullwidth',
                                         'required'=>'required'
                                     ]
-                        )->label(false);
-
-                        /*
-                         * 1 general, 2 accommodation, 3 Rules/reffiing, 4 volunteering, 5 tokens pre-order, 6 t-shirts pre-order
-
-                         */?>
+                        )->label(false); ?>
                 <p class="control is-expanded has-icons-left has-icons-right">
                 </p>
             </div>
