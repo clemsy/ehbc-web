@@ -6,17 +6,19 @@
     .team-list-item {
         border:1px solid black;
         margin-right: 1rem;
+        margin-bottom: 1rem;
     }
     .team-list-item div.team-item {
 
-        min-width: 300px;
-        max-width: 300px;
-        min-height:400px;
+        min-width: 270px;
+        max-width: 270px;
+        height: 360px;
         position: relative;
-        background-color: white;
+        background-color: orange;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+
     }
 </style>
 
@@ -42,7 +44,7 @@
             {% set teamPic = team.teamPicture.one().getUrl('teamPicList') %}
                 <div class="team-list-item">
                     <div class="column  auto team-item " style='background-image: url("{{teamPic}}")'>
-                        <h2 class="title is-5 is-borderless has-background-white" style="position: absolute;bottom:0;left:0;right: 0">
+                        <h2 class="title is-5 is-borderless has-background-white" style="position: absolute;bottom:0;left:0;right: 0;padding:1rem">
                             <a href="{{team.url}}">{{team.teamName}}</a>
                         </h2>
                     </div>
@@ -59,7 +61,14 @@
             .all() %}
 
             {% for team in teams %}
-                <h2 class="title is-5"><a href="{{team.url}}">{{team.teamName}}</a></h2>
+            {% set teamPic = team.teamPicture.one().getUrl('teamPicList') %}
+            <div class="team-list-item">
+                <div class="column  auto team-item " style='background-image: url("{{teamPic}}")'>
+                    <h2 class="title is-5 is-borderless has-background-white" style="position: absolute;bottom:0;left:0;right: 0;padding:1rem">
+                        <a href="{{team.url}}">{{team.teamName}}</a>
+                    </h2>
+                </div>
+            </div>
             {% endfor %}
         </div>
 
