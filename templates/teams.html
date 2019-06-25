@@ -12,7 +12,8 @@
         min-width: 300px;
         max-width: 300px;
         min-height:400px;
-        border:1px solid black
+        border:1px solid black;
+        margin-right: 1rem;
     }
 </style>
 
@@ -36,10 +37,12 @@
 
             {% for team in teams %}
             {% set teamPic = team.teamPicture.one().getUrl('teamPicList') %}
-                <div class="column auto team-list-item " style='background-image: url("{{teamPic}}")'>
-                    <h2 class="title is-5" style="position: absolute;bottom:0">
-                        <a href="{{team.url}}">{{team.teamName}}</a> / {{team.teamRegion}}
-                    </h2>
+                <div class="team-list-item">
+                    <div class="column  auto  " style='background-image: url("{{teamPic}}")'>
+                        <h2 class="title is-5 is-borderless" style="position: absolute;bottom:0">
+                            <a href="{{team.url}}">{{team.teamName}}</a>
+                        </h2>
+                    </div>
                 </div>
             {% endfor %}
         </div>
