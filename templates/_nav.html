@@ -25,7 +25,16 @@
                     </a>
                 </div>
                 {% nav page in pages %}
-                    {% if page.hasDescendants() %}
+                    {% if page.hasDescendants()  %}
+                    {% if  page.slug =='registration' %}
+
+                    <div class="navbar-item">
+                        <a class="  is-arrowless" href="/ehbc/registration">
+                            <span>Registration</span>
+                        </a>
+                    </div>
+                    {% else %}
+
                     <div class="navbar-item has-dropdown  is-hoverable  is-dark is-transparent has-background-black">
 
                         <a class="navbar-link is-arrowless">
@@ -39,6 +48,7 @@
                             {% endfor %}
                         </div>
                     </div>
+                    {% endif %}
                     {% else %}
                         {% if page.slug=='home-page' %}
 
