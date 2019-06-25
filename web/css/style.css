@@ -3887,4 +3887,5 @@ h3.title {
   border-color: #006f37; }
 
 .navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
-  color: #ffa44d; }
+  color: #ffa44d;
+  background-color: #000000; }

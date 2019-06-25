@@ -82,6 +82,8 @@ h3.title
   border-color: $green;
 }
 
-.navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
   color: $orange;
+  background-color: #000000;
 }
