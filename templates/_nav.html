@@ -33,7 +33,7 @@
                         </a>
                         <div class="navbar-dropdown  is-dark has-background-black">
                             {% for submenu in page.getDescendants().all() %}
-                            <a class="navbar-item" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
+                            <a class="navbar-item has-background-black" href="{{submenu.url}}" title="{{submenu.pageTitle}}">
                                 {{submenu.pageTitle}}
                             </a>
                             {% endfor %}
@@ -48,8 +48,8 @@
                             </a>
                         </div>
                         {% elseif page.level < 2 %}
-                        <div class="navbar-item {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
-                            <a class="" href="{{ page.getUrl() }}">
+                        <div class="navbar-item   is-dark has-background-black {% if entry is defined %} {{ page.id == entry.id ? 'is-active' }} {%endif%}">
+                            <a class="" href="{{ page.getUrl() }}" class="navbar-item is-dark has-background-black">
                                 <span>{{ page.pageMenuTitle }}</span>
                             </a>
                         </div>

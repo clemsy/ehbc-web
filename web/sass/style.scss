@@ -81,3 +81,7 @@ h3.title
 .input:focus, textarea.textarea:focus, .select select:focus {
   border-color: $green;
 }
+
+.navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
+  color: $orange;
+}

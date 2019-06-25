@@ -3885,3 +3885,6 @@ h3.title {
 .input:hover, textarea.textarea:hover, .select select:hover,
 .input:focus, textarea.textarea:focus, .select select:focus {
   border-color: #006f37; }
+
+.navbar-dropdown a.navbar-item:focus, .navbar-dropdown a.navbar-item:hover {
+  color: #ffa44d; }
