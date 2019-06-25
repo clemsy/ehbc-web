@@ -33,7 +33,7 @@ use yii\widgets\DetailView;
 
 
 <p>
-    Date : <?=echo Yii::$app->formatter->asDatetime(time());?>
+    Date : <?= Yii::$app->formatter->asDatetime(time());?>
 </p>
 
 <p>
