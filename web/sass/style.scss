@@ -76,6 +76,11 @@ h3.title
 {
   text-transform: uppercase;
   font-family: Slash;
+}
+.title.is-2,
+.title.is-3,
+.title.is-4,
+.title.is-5 {
   border-bottom: 1px solid $orange;
 }
 
