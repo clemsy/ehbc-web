@@ -27,7 +27,7 @@ $form = ActiveForm::begin([
     'action' => \craft\helpers\UrlHelper::actionUrl('dolphiq-craft3-forms/main/index', ['handle' => $handle]),
     'method' => 'POST',
     'options' => [
-        'data-pjax' => true,
+        'data-pjax' => false,
     ],
 ]);
 
@@ -40,14 +40,13 @@ $form = ActiveForm::begin([
         </div>
         <div class="field-body">
             <div class="field is-expanded">
-                <?= $form->field($model, 'fullname')->textInput(['class'=>'input  control field', 'placeholder'=>'Your name'])->label(false); ?>
+                <?= $form->field($model, 'fullname')->textInput(['class'=>'input  control field', 'placeholder'=>'Your name', 'required'=>'required'])->label(false); ?>
                 <p class="control is-expanded has-icons-left">
                 </p>
             </div>
             <div class="field">
-                <?= $form->field($model, 'email')->textInput(['class'=>'input  control field', 'placeholder'=>'Your email address'])->label(false); ?>
+                <?= $form->field($model, 'email')->textInput(['class'=>'input  control field', 'placeholder'=>'Your email address', 'required'=>'required'])->label(false); ?>
                 <p class="control is-expanded has-icons-left has-icons-right">
-
                 </p>
             </div>
         </div>
@@ -89,7 +88,8 @@ $form = ActiveForm::begin([
                                 ],
                                 [
                                         'prompt'=>'Choose...',
-                                        'class'=>'select is-fullwidth'
+                                        'class'=>'select is-fullwidth',
+                                        'required'=>'required'
                                     ]
                         )->label(false);
 
@@ -97,8 +97,7 @@ $form = ActiveForm::begin([
                          * 1 general, 2 accommodation, 3 Rules/reffiing, 4 volunteering, 5 tokens pre-order, 6 t-shirts pre-order
 
                          */?>
-                <p class="control">
-
+                <p class="control is-expanded has-icons-left has-icons-right">
                 </p>
             </div>
         </div>
@@ -112,7 +111,7 @@ $form = ActiveForm::begin([
         <div class="field-body">
             <div class="field">
                 <div class="control">
-                    <?= $form->field($model, 'message')->textarea(['class'=>'textarea', 'rows'=>12])->label(false); ?>
+                    <?= $form->field($model, 'message')->textarea(['class'=>'textarea', 'rows'=>12, 'required'=>'required'])->label(false); ?>
                 </div>
             </div>
         </div>
