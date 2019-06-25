@@ -40,6 +40,7 @@ use yii\widgets\DetailView;
     Subject : <?=$model->subject;?>
 </p>
 <p>
-    Message :<br>
-    <?=Yii::$app->formatter->asNtext($model->subject);?>
+    Message :
 </p>
+
+<?=Yii::$app->formatter->asNtext($model->message);?>
