@@ -7,7 +7,6 @@
     <div class="page-content">
 
         <h1 class="is-3 title">{{entry.teamName}}</h1>
-        <h3 class="is-5 title">Region : {{entry.teamRegion}}</h3>
 
         {% if entry.teamPicture.one() %}
         <div class=" is-fullwidth has-text-centered" style="position: relative;max-height:400px">
@@ -22,6 +21,7 @@
         {% endif %}
 
 
+        <h3 class="is-5 title">Region : {{entry.teamRegion}}</h3>
 
         <h3 class="is-5 title">Players:</h3>
 
