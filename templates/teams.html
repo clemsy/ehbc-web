@@ -10,6 +10,7 @@
         background-size: cover;
         background-position: center center;
         min-width: 300px;
+        max-width: 300px;
         min-height:400px;
         border:1px solid black
     }
@@ -27,7 +28,7 @@
     <div class="container">
 
         <h1 class="title is-2">Teams qualified for the Main EHBC Event</h1>
-        <div class="columns" style="padding:1rem">
+        <div class="columns is-multiline" style="padding:1rem">
             {% set teams =  craft.entries().section('teams')
             .teamEvent('MAIN')
             .orderBy('teamName ASC')
