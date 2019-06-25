@@ -39,14 +39,14 @@ $form = ActiveForm::begin([
             <label class="label">From</label>
         </div>
         <div class="field-body">
-            <div class="field">
+            <div class="field is-expanded">
+                <?= $form->field($model, 'fullname')->textInput(['class'=>'input  control field', 'placeholder'=>'Your name'])->label(false); ?>
                 <p class="control is-expanded has-icons-left">
-                    <?= $form->field($model, 'fullname')->textInput(['class'=>'input', 'placeholder'=>'Your name'])->label(false); ?>
                 </p>
             </div>
             <div class="field">
+                <?= $form->field($model, 'email')->textInput(['class'=>'input  control field', 'placeholder'=>'Your email address'])->label(false); ?>
                 <p class="control is-expanded has-icons-left has-icons-right">
-                    <?= $form->field($model, 'email')->textInput(['class'=>'input', 'placeholder'=>'Your email address'])->label(false); ?>
 
                 </p>
             </div>
