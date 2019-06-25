@@ -10,14 +10,36 @@ use yii\widgets\DetailView;
 <h2>A contact request has been filled in</h2>
 <p>
     We received the following details:<br>
+
+
+
+
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'fullname',
             'email',
             'subject',
-            'phone',
             'message:ntext'
         ]
     ]); ?>
+</p>
+
+
+<p>
+    From : <?=$model->fullname;?> (<a href="<?=$model->email;?>"><?=$model->email;?></a>)
+</p>
+
+
+<p>
+    Date : <?=echo Yii::$app->formatter->asDatetime(time());?>
+</p>
+
+<p>
+    Subject : <?=$model->subject;?>
+</p>
+<p>
+    Message :<br>
+    <?=Yii::$app->formatter->asNtext($model->subject);?>
 </p>
