@@ -1,0 +1,14 @@
+/* TEAM */
+	Chef:Gernot DJANGO Gruber
+	Contact: eurobikeoplo [at] gmail.com
+	From:Barcelona, Catalonia, Spain
+
+	Web developer:Clément C.
+	From:Brussels, Brussels, Belgium
+
+
+/* SITE */
+	Last update:2019/06/25
+	Language: English
+	Doctype:HTML5
+	IDE: VIM
