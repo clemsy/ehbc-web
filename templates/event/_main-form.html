@@ -61,8 +61,8 @@
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select required name="fields[teamEvent]" id="teamEvent" required>
-                                <option>Select Event</option>
+                            <select required aria-required="true" name="fields[teamEvent]" id="teamEvent" required>
+                                <option value="">Select Event</option>
                                 <option value="MAIN"> EHBC 2019 Main Event</option>
                                 <option value="WILDCARD">EHBC 2019 Wilcard</option>
                             </select>
@@ -312,8 +312,8 @@
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select required name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
-                                <option>Select Housing Option</option>
+                            <select required aria-required="true" name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
+                                <option value="">Select Housing Option</option>
                                 <option value="pfadihuus">Pfadihuus</option>
                                 <option value="gym">Gym</option>
                                 <option value="noHousing">No Housing</option>
