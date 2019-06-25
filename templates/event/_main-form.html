@@ -61,7 +61,7 @@
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select name="fields[teamEvent]" id="teamEvent">
+                            <select name="fields[teamEvent]" id="teamEvent" required>
                                 <option>Select Event</option>
                                 <option value="MAIN"> EHBC 2019 Main Event</option>
                                 <option value="WILDCARD">EHBC 2019 Wilcard</option>
@@ -84,7 +84,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Team Name" id="teamName" name="fields[teamName]" {%- if entry is defined %} value="{{ entry.teamName }}"{% endif %}>
+                        <input required class="input" type="text" placeholder="Team Name" id="teamName" name="fields[teamName]" {%- if entry is defined %} value="{{ entry.teamName }}"{% endif %}>
                     </p>
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Team Contact Email" id="teamContactEmail" name="fields[teamContactEmail]" {%- if entry is defined %} value="{{ entry.teamContactEmail }}"{% endif %}>
+                        <input required class="input" type="text" placeholder="Team Contact Email" id="teamContactEmail" name="fields[teamContactEmail]" {%- if entry is defined %} value="{{ entry.teamContactEmail }}"{% endif %}>
                     </p>
                 </div>
             </div>
@@ -150,7 +150,7 @@
 
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Player {{player}} Name" id="player{{player}}Name" name="fields[teamPlayer{{player}}Name]" >
+                        <input required class="input" type="text" placeholder="Player {{player}} Name" id="player{{player}}Name" name="fields[teamPlayer{{player}}Name]" >
                     </p>
                 </div>
             </div>
@@ -164,7 +164,7 @@
 
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Player {{player}} City" id="teamPlayer{{player}}City" name="fields[teamPlayer{{player}}City]" >
+                        <input required class="input" type="text" placeholder="Player {{player}} City" id="teamPlayer{{player}}City" name="fields[teamPlayer{{player}}City]" >
                     </p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select name="fields[teamPlayer{{player}}Country]" id="teamPlayer{{player}}Country">
+                            <select required name="fields[teamPlayer{{player}}Country]" id="teamPlayer{{player}}Country">
                                 <option>Select country</option>
                                 {% for country in countries| supersort('asort', null, SORT_STRING) %}
                                 <option value="{{ country.code }}">{{ country.name }}</option>
@@ -204,7 +204,7 @@
 
                 <div class="field">
                     <p class="control">
-                        <input type="file" class="input" name="fields[teamPicture]" id="teamPicture" placeholder="Team Picture image file">
+                        <input required type="file" class="input" name="fields[teamPicture]" id="teamPicture" placeholder="Team Picture image file">
 
                     </p>
                 </div>
@@ -228,7 +228,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {% if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
+                        <input required class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {% if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
                     </p>
                 </div>
             </div>
@@ -312,7 +312,7 @@
                 <div class="field is-narrow">
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
+                            <select required name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
                                 <option>Select Housing Option</option>
                                 <option value="pfadihuus">Pfadihuus</option>
                                 <option value="gym">Gym</option>
@@ -355,9 +355,6 @@
         </p>
 
         <div class="field ">
-            <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamWhbpcComment">Any comment on housing?</label>
-            </div>
             <div class="field-body">
                 <div class="field">
                     <p class="control">
