@@ -68,7 +68,7 @@ $form = ActiveForm::begin([
     </div>
     */ ?>
 
-    <div class="field is-horizontal" style="margin-bottom:1rem">
+    <div class="field is-horizontal" style="margin-bottom:2rem">
         <div class="field-label is-normal">
             <label class="label">Subject category</label>
         </div>
