@@ -27,7 +27,7 @@ $form = ActiveForm::begin([
     'action' => \craft\helpers\UrlHelper::actionUrl('dolphiq-craft3-forms/main/index', ['handle' => $handle]),
     'method' => 'POST',
     'options' => [
-        'data-pjax' => false,
+        'data-pjax' => true,
     ],
 ]);
 
