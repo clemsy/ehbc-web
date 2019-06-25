@@ -25,8 +25,6 @@
 
     {% if entry is defined %}
 
-        OKOOKOKOK
-
         {% if entry.errors|length > 0 %}
 
         <div>
@@ -75,7 +73,7 @@
         </div>
         {% if entry is defined %}
         <p class="help is-danger">
-            Error : {{ errorList(entry.getErrors('teamEvent')) }}
+            {{ errorList(entry.getErrors('teamEvent')) }}
         </p>
         {% endif %}
 
@@ -230,7 +228,7 @@
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {%- if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
+                        <input class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {% if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
                     </p>
                 </div>
             </div>
@@ -246,19 +244,19 @@
             We will award helpers with tokens for food and drinks.
         </p>
         <div class="field ">
-        <div class="field-label is-normal">
-            <label class="label has-text-left" for="teamVolunteering">Do you want to help us?</label>
-        </div>
-        <div class="field-body">
-            <div class="field">
-                <p class="control">
-                    <input class="input" type="text" placeholder="" id="teamVolunteering" name="fields[teamVolunteering]" {%- if entry is defined %} value="{{ entry.teamVolunteering }}"{% endif %}>
-                </p>
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamVolunteering">Do you want to help us?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <input class="input" type="text" placeholder="" id="teamVolunteering" name="fields[teamVolunteering]" {% if entry is defined %} value="{{ entry.teamVolunteering }}"{% endif %}>
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
- <p>
+        <p>
         <hr>
         </p>
         <h3 class="title is-2" style="margin-top: 1rem">Section 3, Travel:</h3>
@@ -278,19 +276,166 @@
                             Player 1
                     </label>
                     <br>
+                    <label class="checkbox">
+                        <input  type="checkbox" placeholder="" id="player2" name="fields[teamPlayerTwoIsTravelingByTrain]" value="1">
+                            Player 2
+                    </label>
+                    <br>
+                    <label class="checkbox">
+                        <input  type="checkbox" placeholder="" id="player3" name="fields[teamPlayerThreeIsTravelingByTrain]" value="1">
+                            Player 3
+                    </label>
+                    <br>
                 </p>
             </div>
         </div>
     </div>
 
+        <p>
+        <hr>
+        </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 4, Accomodation:</h3>
+        <p>
+            There are different accommodation options, which you can find <a href="/ehbc/accommodation" target="_blank">here</a>.
+            <br>
+            Please have a look and let us know what you prefer.
+            <br>
+            <b>Note that places are limited!</b> If you need accommodation for more people or have questions please comment below.        </p>
+
+
+        {% for k, player in [1,2,3] %}
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="teamPlayer{{player}}Accommodation">Player {{player}}</label>
+            </div>
+            <div class="field-body">
+                <div class="field is-narrow">
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
+                                <option>Select Housing Option</option>
+                                <option value="pfadihuus">Pfadihuus</option>
+                                <option value="gym">Gym</option>
+                                <option value="noHousing">No Housing</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamHousingComment">Any comment on housing?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" type="text" placeholder="" id="teamHousingComment" name="fields[teamHousingComment]" rows="6">{% if entry is defined %} {{ entry.teamHousingComment }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
 
         <p>
         <hr>
         </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 5, World Championships:</h3>
+        <p>
+            Teams for WHBPC will have to pre-register before EHBC!
+            <br>
+            Please let us know which players from your team want to play in WHBPC 2019 Cordoba.
+            <br>
+            This is to know for us who to have on the radar. We will send you a reminder for pre-registration!
+
+        </p>
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamWhbpcComment">Any comment on housing?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" type="text" placeholder="" id="teamWhbpcComment" name="fields[teamWhbpcComment]" rows="6">
+                            {% if entry is defined %} {{ entry.teamWhbpcComment }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>
+        <hr>
+        </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 6, Tokens Pre Order:</h3>
+        <p>
+            You can buy tokens for 20% cheaper here than on the event location.
+            <br>
+            One token is 1.5€ and gets you a small drink! More infos here.
+        </p>
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamPreOrderTokens">Please let us know how many tokens you want to pre-order for your team!</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" type="text" placeholder="" id="teamPreOrderTokens" name="fields[teamPreOrderTokens]" rows="6">
+                            {% if entry is defined %} {{ entry.teamPreOrderTokens }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+        <hr>
+        </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 7, Tee Shirts Pre Order:</h3>
+        <p>
+            You can pre-order event T-shirts for 14€ each. They are unisex and available from S to XXL.
+
+        </p>
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamPreOrderTeeShirts">I want to order the following T-shirts:</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" type="text" placeholder="" id="teamPreOrderTeeShirts" name="fields[teamPreOrderTeeShirts]" rows="6">
+                            {% if entry is defined %} {{ entry.teamPreOrderTeeShirts }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
 
 
 
+        <p>
+        <hr>
+        </p>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 8, Comments:</h3>
 
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamRegistrationGeneralComment">If there is anything else you want to tell us please put it here: :</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+                        <textarea class="textarea" type="text" placeholder="" id="teamRegistrationGeneralComment" name="fields[teamRegistrationGeneralComment]" rows="6">
+                            {% if entry is defined %} {{ entry.teamRegistrationGeneralComment }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
 
 
 
