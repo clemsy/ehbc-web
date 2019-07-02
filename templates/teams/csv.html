@@ -1,9 +1,10 @@
 
 {% block content %}
+{% autoescape %}
 Registation Datetime,teamEvent,teamName,teamContactEmail,teamPlayer1Name,teamPlayer1City,teamPlayer1Country,teamPlayer1Accommodation,teamPlayerOneIsTravelingByTrain,teamPlayer2Name,teamPlayer2City,teamPlayer2Country,teamPlayer2Accommodation,teamPlayerTwoIsTravelingByTrain,teamPlayer3Name,teamPlayer3City,teamPlayer3Country,teamPlayer3Accommodation,teamPlayerThreeIsTravelingByTrain,teamHousingComment,teamRefereree,teamVolunteering,teamRegistrationGeneralComment,teamPreOrderTeeShirts,teamPreOrderTokens,teamWhbpcComment
 {% set teams =  craft.entries().section('teams').orderBy('dateCreated ASC').all() %}
 {% for team in teams %}
-{{team.dateCreated|datetime}},{{team.teamEvent}},{{team.teamName}},{{team.teamContactEmail}},{{team.teamPlayer1Name}},{{team.teamPlayer1City}},{{team.teamPlayer1Country}},{{team.teamPlayer1Accommodation}},{{team.teamPlayerOneIsTravelingByTrain}},{{team.teamPlayer2Name}},{{team.teamPlayer2City}},{{team.teamPlayer2Country}},{{team.teamPlayer2Accommodation}},{{team.teamPlayerTwoIsTravelingByTrain}},{{team.teamPlayer3Name}},{{team.teamPlayer3City}},{{team.teamPlayer3Country}},{{team.teamPlayer3Accommodation}},{{team.teamPlayerThreeIsTravelingByTrain}},{{team.teamHousingComment}},{{team.teamRefereree}},{{team.teamVolunteering}},{{team.teamRegistrationGeneralComment}},{{team.teamPreOrderTeeShirts}},{{team.teamPreOrderTokens}},{{team.teamWhbpcComment}}
+{{team.dateCreated|date('U')}},{{team.teamEvent}},{{team.teamName}},{{team.teamContactEmail}},{{team.teamPlayer1Name}},{{team.teamPlayer1City}},{{team.teamPlayer1Country}},{{team.teamPlayer1Accommodation}},{{team.teamPlayerOneIsTravelingByTrain}},{{team.teamPlayer2Name}},{{team.teamPlayer2City}},{{team.teamPlayer2Country}},{{team.teamPlayer2Accommodation}},{{team.teamPlayerTwoIsTravelingByTrain}},{{team.teamPlayer3Name}},{{team.teamPlayer3City}},{{team.teamPlayer3Country}},{{team.teamPlayer3Accommodation}},{{team.teamPlayerThreeIsTravelingByTrain}},{{team.teamHousingComment}},{{team.teamRefereree}},{{team.teamVolunteering}},{{team.teamRegistrationGeneralComment}},{{team.teamPreOrderTeeShirts}},{{team.teamPreOrderTokens}},{{team.teamWhbpcComment}}
 {% endfor %}
-
+{% endautoescape %}
 {% endblock %}
