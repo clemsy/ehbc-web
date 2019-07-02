@@ -1,5 +1,8 @@
+{% header "Content-Type: application/xml" %}
+{% header "Content-Description: File Transfer" %}
 {% set teams =  craft.entries().section('teams').orderBy('dateCreated ASC').all() %}
 {% block content %}
+{% autoescape %}
 <?xml version="1.0" encoding="UTF-8"?>
 <teams>
     {% for team in teams %}
@@ -34,4 +37,5 @@
     </team>
     {% endfor %}
 </teams>
+{% endautoescape %}
 {% endblock %}
