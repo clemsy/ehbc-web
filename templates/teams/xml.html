@@ -1,0 +1,36 @@
+{% set teams =  craft.entries().section('teams').orderBy('dateCreated ASC').all() %}
+{% block content %}
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+    {% for team in teams %}
+    <team>
+        <registrationDatetime>{{team.dateCreated|datetime}}</registrationDatetime>
+        <event>{{team.teamEvent}}</event>
+        <name>{{team.teamName}}</name>
+        <teamContactEmail>{{team.teamContactEmail}}</teamContactEmail>
+        <teamPlayer1Name>{{team.teamPlayer1Name}}</teamPlayer1Name>
+        <teamPlayer1City>{{team.teamPlayer1City}}</teamPlayer1City>
+        <teamPlayer1Country>{{team.teamPlayer1Country}}</teamPlayer1Country>
+        <teamPlayer1Accommodation>{{team.teamPlayer1Accommodation}}</teamPlayer1Accommodation>
+        <teamPlayerOneIsTravelingByTrain>{{team.teamPlayerOneIsTravelingByTrain}}</teamPlayerOneIsTravelingByTrain>
+        <teamPlayer2Name>{{team.teamPlayer2Name}}</teamPlayer2Name>
+        <teamPlayer2City>{{team.teamPlayer2City}}</teamPlayer2City>
+        <teamPlayer2Country>{{team.teamPlayer2Country}}</teamPlayer2Country>
+        <teamPlayer2Accommodation>{{team.teamPlayer2Accommodation}}</teamPlayer2Accommodation>
+        <teamPlayerTwoIsTravelingByTrain>{{team.teamPlayerTwoIsTravelingByTrain}}</teamPlayerTwoIsTravelingByTrain>
+        <teamPlayer3Name>{{team.teamPlayer3Name}}</teamPlayer3Name>
+        <teamPlayer3City>{{team.teamPlayer3City}}</teamPlayer3City>
+        <teamPlayer3Country>{{team.teamPlayer3Country}}</teamPlayer3Country>
+        <teamPlayer3Accommodation>{{team.teamPlayer3Accommodation}}</teamPlayer3Accommodation>
+        <teamPlayerThreeIsTravelingByTrain>{{team.teamPlayerThreeIsTravelingByTrain}}</teamPlayerThreeIsTravelingByTrain>
+        <teamHousingComment>{{team.teamHousingComment}}</teamHousingComment>
+        <teamRefereree>{{team.teamRefereree}}</teamRefereree>
+        <teamVolunteering>{{team.teamVolunteering}}</teamVolunteering>
+        <teamRegistrationGeneralComment>{{team.teamRegistrationGeneralComment}}</teamRegistrationGeneralComment>
+        <teamPreOrderTeeShirts>{{team.teamPreOrderTeeShirts}}</teamPreOrderTeeShirts>
+        <teamPreOrderTokens>{{team.teamPreOrderTokens}}</teamPreOrderTokens>
+        <teamWhbpcComment>{{team.teamWhbpcComment}}</teamWhbpcComment>
+    </team>
+    {% endfor %}
+</teams>
+{% endblock %}
