@@ -4,6 +4,7 @@
 <teams>
     {% for team in teams %}
     <team>
+        <timestamp>{{team.dateCreated|date('U')}}</timestamp>
         <registrationDatetime>{{team.dateCreated|datetime}}</registrationDatetime>
         <event>{{team.teamEvent}}</event>
         <name>{{team.teamName}}</name>
