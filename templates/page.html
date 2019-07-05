@@ -31,11 +31,24 @@
 
     </div>
     {% if requestedSlug == 'contact-us' %}
-
     <hr>
     {% include '_contact' %}
-
     {% endif %}
+
+
+    {% if requestedSlug == 'main-teams' %}
+    <hr>
+    {% set vars = {'event': 'MAIN'} %}
+    {% include '_teams' with vars %}
+    {% endif %}
+
+
+    {% if requestedSlug == 'wilcard-teams' %}
+    <hr>
+    {% set vars = {'event': 'WILDCARD'} %}
+    {% include '_teams' with vars %}
+    {% endif %}
+
 
     {% if requestedSlug == 'registration-form' %}
     <hr>
