@@ -46,18 +46,20 @@
             </li>
         </ul>
 
+        {% if entry.teamLastEhbcRanking %}
 
         <h3 class="is-5 title">Last EHBC Ranking:</h3>
         <div class="content">
             {{entry.teamLastEhbcRanking}}
         </div>
+        {% endif %}
 
-
+        {% if entry.teamDescription %}
         <h3 class="is-5 title">Other team informations:</h3>
         <div class="content">
             {{entry.teamDescription|nl2br}}
         </div>
-
+        {% endif %}
 
     </div>
 </div>

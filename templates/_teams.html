@@ -1,0 +1,60 @@
+
+{% block content %}
+
+<style>
+    .team-list-item {
+        border:1px solid black;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+        max-width: 272px;
+    }
+    .team-list-item div.team-item {
+
+        min-width: 270px;
+        max-width: 270px;
+        height: 360px;
+        position: relative;
+        background-color: orange;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+    }
+</style>
+
+<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+
+
+    <p class="">
+    <h1 class="title is-3 has-text-centered is-hidden">EHBC 2019</h1>
+    <h2 class="title is-4 has-text-centered is-hidden">16-21 July 2019 - Zürich, Switzerland</h2>
+    </p>
+
+
+    <div class="container">
+
+        <h1 class="title is-2">Teams qualified for the Main EHBC Event</h1>
+        <div class="columns is-multiline" style="padding:1rem">
+            {% set teams =  craft.entries().section('teams')
+            .teamEvent(event)
+            .teamIsPublished(true)
+            .orderBy('teamName ASC')
+            .all() %}
+
+            {% for team in teams %}
+            {% set teamPic = team.teamPicture.one().getUrl('teamPicList') %}
+            <div class="team-list-item">
+                <div class="column  auto team-item " style='background-image: url("{{teamPic}}")'>
+                    <h2 class="title is-5 is-borderless has-background-white" style="position: absolute;bottom:0;left:0;right: 0;padding:1rem">
+                        <a href="{{team.url}}">{{team.teamName}}</a>
+                    </h2>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
