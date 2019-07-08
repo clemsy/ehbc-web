@@ -3862,6 +3862,10 @@ html, body {
   font-family: Slash, "Arial Rounded MT Bold";
   color: #fff; }
 
+.navbar-menu {
+  background-color: black;
+  text-align: left; }
+
 nav a:last-child:not(.navbar-item-home) {
   /* margin-right:1rem;*/ }
 
