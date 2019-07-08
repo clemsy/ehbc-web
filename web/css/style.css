@@ -3874,8 +3874,15 @@ a.navbar-link span {
   color: #fff;
   display: inline-block; }
 
-nav a:hover {
-  color: #ffa44d; }
+a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active,
+nav a:focus,
+nav a:active,
+nav a:hover,
+nav a:focus span,
+nav a:active span,
+nav a:hover span {
+  color: #ffa44d;
+  background-color: black; }
 
 h1.title,
 h2.title,
