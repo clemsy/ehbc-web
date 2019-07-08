@@ -3857,6 +3857,8 @@ a.navbar-item,
 html, body {
   background-color: linear-gradient(#ffa44d, #B17235); }
 
+.navbar-item-is-home span,
+.navbar-item-home,
 .navbar-end {
   text-transform: uppercase;
   font-family: Slash, "Arial Rounded MT Bold";

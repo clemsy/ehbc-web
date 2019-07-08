@@ -51,6 +51,8 @@ html, body {
 }
 $navbar-dropdown-border-top: 0;
 $navbar-dropdown-item-hover-background-color: black;
+.navbar-item-is-home span,
+.navbar-item-home,
 .navbar-end {
   text-transform: uppercase;
   font-family: Slash, "Arial Rounded MT Bold";
