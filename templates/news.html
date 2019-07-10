@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+<div class="is-fullwidth  has-background-white content" style="padding: 2rem">
 
 
     <div class="page-content">
@@ -15,7 +15,7 @@
         <div >
             {% paginate craft.entries.section('news').orderBy('postDate DESC').limit(10) as items %}
 
-            <ul>
+            <ul style="margin: 0">
                 {% for k, item in items %}
                 <li style="list-style-type: none">
                     <a href="{{item.url}}">

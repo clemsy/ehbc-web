@@ -8,13 +8,10 @@
 .one() %}
 {% set pageTitle = entry.pageTitle %}
 {% block content %}
-<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+<div class="is-fullwidth  has-background-white content" style="padding: 2rem">
 
 
     <div class="page-content">
-
-
-
 
         {% if entry.slug!='home-page' %}
         <h1 class="title is-2">
@@ -24,9 +21,6 @@
         <div class="content has-text-left">
             {{entry.pageContent}}
         </div>
-        {#
-        #}
-
 
 
     </div>
@@ -41,7 +35,6 @@
     {% set vars = {'event': 'MAIN'} %}
     {% include '_teams' with vars %}
     <hr>
-    {% set vars = {'event': 'MAIN'} %}
     {% include '_teams_qualified' with vars %}
     {% endif %}
 
@@ -51,7 +44,6 @@
     {% set vars = {'event': 'WILDCARD'} %}
     {% include '_teams' with vars %}
     <hr>
-    {% set vars = {'event': 'WILDCARD'} %}
     {% include '_teams_qualified' with vars %}
     {% endif %}
 
