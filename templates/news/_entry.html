@@ -17,11 +17,12 @@
 
                 <h4 class="title is-4">{{entry.newsTitle}}</h4>
 
-                <div style="color:black" class="has-text-right small">posted on {{entry.postDate|date('long', timezone='UTC', locale='en')}}</div>
                 <div class="">
                     <div class=" ">
                         {{entry.newsBody}}
                     </div>
+
+                    <div style="color:black" class="has-text-right small">posted on {{entry.postDate|date('long', timezone='UTC', locale='en')}}</div>
                 </div>
 
             {% set assets = entry.newsAssets.all() %}
