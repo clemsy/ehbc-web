@@ -30,6 +30,16 @@
     {% endif %}
 
 
+    {% if requestedSlug == 'announcements' %}
+    <hr>
+    {% include 'news/_list' %}
+    {% endif %}
+    {% if requestedSlug == 'news' %}
+    <hr>
+    {% include 'news/_list' %}
+    {% endif %}
+
+
     {% if requestedSlug == 'main-teams' %}
     <hr>
     {% set vars = {'event': 'MAIN'} %}
