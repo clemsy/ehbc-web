@@ -1,0 +1,58 @@
+{% extends "/layout" %}
+
+
+{% block content %}
+<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+
+
+    <div class="page-content">
+
+        <h1 class="title is-2">
+            Announcements
+        </h1>
+
+        <hr>
+
+        <div>
+
+                <h4 class="title is-4">{{entry.newsTitle}}</h4>
+
+                <div style="color:black" class="has-text-right small">posted on {{entry.postDate|date('long', timezone='UTC', locale='en')}}</div>
+                <div class="">
+                    <div class=" ">
+                        {{entry.newsBody}}
+                    </div>
+                </div>
+
+            {% set assets = entry.newsAssets.all() %}
+            {% if assets|length %}
+            <hr>
+
+            <section class="">
+                <h3 class="title is-5 has-no-bm">Downloads :</h3>
+                <ul class=" list-files">
+                    {% for k, asset in assets %}
+                    <li class="">
+                        <a href="{{ asset.getUrl() }}" class="">
+                            <i class="fa fa-file" aria-hidden="true"></i>
+
+                            <span>{{ asset.title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <hr style="background-color:#ffa44d;height:1px">
+            {% endif %}
+
+                <div style="color:black" class="has-text-right small">
+                    <a href="{{url('news')}}">&laquo; Go back to announcements</a>
+                </div>
+        </div>
+
+
+
+    </div>
+
+</div>
+{% endblock %}

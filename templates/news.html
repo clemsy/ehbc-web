@@ -1,0 +1,47 @@
+{% extends "/layout" %}
+
+
+{% block content %}
+<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+
+
+    <div class="page-content">
+
+        <h1 class="title is-2">
+            Announcements
+        </h1>
+        <hr>
+
+        <div >
+            {% paginate craft.entries.section('news').orderBy('postDate DESC').limit(10) as items %}
+
+            <ul>
+                {% for k, item in items %}
+                <li style="list-style-type: none">
+                    <a href="{{item.url}}">
+                        <h4 class="title is-4">{{item.newsTitle}}</h4>
+                    </a>
+                        <div class="">
+
+                            <div class="">
+                                {{item.newsIntroduction}}
+                            </div>
+
+
+                            <div style="color:black" class="has-text-right small">
+                                posted on {{item.postDate|date('long', timezone='UTC', locale='en')}}
+                                -
+                                <a href="{{item.url}}">Read more &raquo;</a>
+                            </div>
+                        </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+
+
+    </div>
+
+</div>
+{% endblock %}

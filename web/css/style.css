@@ -3898,6 +3898,9 @@ h3.title {
 .title.is-5 {
   border-bottom: 1px solid #ffa44d; }
 
+.page-content h1.title {
+  margin-top: 1rem; }
+
 .input, textarea.textarea, .select select {
   border-color: #ffa44d; }
 
