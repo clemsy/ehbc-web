@@ -21,7 +21,8 @@
             {% for team in teams %}
                 <li>
                     <h3 class="title is-5 is-borderless has-background-white">
-                        <a href="{{team.url}}">{{team.teamName}}</a> {% if team.teamDescription %}} ({{team.teamDescription|raw }}) {% endif %}
+                        <a href="{{team.url}}">{{team.teamName}}</a>
+                        {# if team.teamDescription %}} ({{team.teamDescription|raw }}) {% endif #}
                     </h3>
                 </li>
             {% endfor %}
