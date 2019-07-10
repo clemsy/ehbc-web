@@ -41,6 +41,7 @@
     {% set vars = {'event': 'MAIN'} %}
     {% include '_teams' with vars %}
     <hr>
+    {% set vars = {'event': 'MAIN'} %}
     {% include '_teams_qualified' with vars %}
     {% endif %}
 
@@ -50,6 +51,7 @@
     {% set vars = {'event': 'WILDCARD'} %}
     {% include '_teams' with vars %}
     <hr>
+    {% set vars = {'event': 'WILDCARD'} %}
     {% include '_teams_qualified' with vars %}
     {% endif %}
 
