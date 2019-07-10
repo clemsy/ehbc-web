@@ -34,6 +34,7 @@
             {% set teams =  craft.entries().section('teams')
             .teamEvent(event)
             .teamIsPublished(true)
+            .teamHasPaidRegistration(true)
             .orderBy('teamName ASC')
             .all() %}
 

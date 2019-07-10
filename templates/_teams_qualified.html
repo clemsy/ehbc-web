@@ -1,0 +1,35 @@
+
+{% block content %}
+
+<div class="is-fullwidth  has-background-white content" style="padding: 1rem">
+
+
+
+
+    <div class="container">
+
+        <h1 class="title is-2">Qualified teams:</h1>
+        <div class="columns is-multiline" style="padding:1rem">
+            {% set teams =  craft.entries().section('teams')
+            .teamEvent(event)
+            .teamIsPublished(true)
+            .teamHasPaidRegistration(false)
+            .orderBy('teamName ASC')
+            .all() %}
+
+            <ul>
+            {% for team in teams %}
+                <li>
+                    <h3 class="title is-5 is-borderless has-background-white">
+                        <a href="{{team.url}}">{{team.teamName}}</a> {% if team.teamDescription %}} ({{team.teamDescription|raw }}) {% endif %}
+                    </h3>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
