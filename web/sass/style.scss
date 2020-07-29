@@ -8,7 +8,8 @@
 
 .tk-aw-conqueror-carved { font-family: "aw-conqueror-carved",sans-serif; }
 // Set your brand colors
-$orange: #f6ea39;
+$orange: #f6ce0c;
+$yellow: #f6ea39;
 $pink: black;
 $black: black;
 $brown: #4d4f42;
@@ -20,14 +21,14 @@ $beige-lighter: #ffffff;
 $family-sans-serif: "Helvetica", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$primary: $orange;
-$link: $orange;
+$primary: $yellow;
+$link: $yellow;
 
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: $orange;
+$body-background-color: $yellow;
 $body-font-size: 1.1em;
 $body-line-height: 1.7;
 $hr-background-color: transparent;
@@ -82,7 +83,7 @@ nav a:hover,
 nav a:focus span,
 nav a:active span,
 nav a:hover span {
-  color: $orange;
+  color: $yellow;
   background-color: black;
 }
 
@@ -97,7 +98,7 @@ h3.title
 .title.is-3,
 .title.is-4,
 .title.is-5 {
-  border-bottom: 1px solid $orange;
+  border-bottom: 1px solid $yellow;
 }
 
 
@@ -106,15 +107,16 @@ h3.title
 }
 
 .input, textarea.textarea, .select select {
-  border-color: $orange;
+  border-color: $yellow;
+  color: $black;
 }
 .input:hover, textarea.textarea:hover, .select select:hover,
 .input:focus, textarea.textarea:focus, .select select:focus {
-  border-color: $green;
+  border-color: $orange;
 }
 
 .navbar-dropdown a.navbar-item:focus,
 .navbar-dropdown a.navbar-item:hover {
-  color: $orange;
+  color: $yellow;
   background-color: #000000;
 }
