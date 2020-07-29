@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "Slash";
-  src: url("/fonts/Slash.ttf"); }
+  font-family: aw-conqueror-carved, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
 
 @keyframes spinAround {
   from {
@@ -3861,7 +3863,7 @@ html, body {
 .navbar-item-home,
 .navbar-end {
   text-transform: uppercase;
-  font-family: Slash, "Arial Rounded MT Bold";
+  font-family: aw-conqueror-carved, "Arial Rounded MT Bold";
   color: #fff; }
 
 .navbar-menu {
@@ -3890,7 +3892,7 @@ h1.title,
 h2.title,
 h3.title {
   text-transform: uppercase;
-  font-family: Slash; }
+  font-family: aw-conqueror-carved; }
 
 .title.is-2,
 .title.is-3,
