@@ -1,8 +1,12 @@
+@import url("https://p.typekit.net/p.css?s=1&k=deq6iaa&ht=tk&f=16996&a=13586124&app=typekit&e=css");
+
 @font-face {
-  font-family: aw-conqueror-carved, sans-serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family:"aw-conqueror-carved";
+  src:url("https://use.typekit.net/af/c89592/00000000000000003b9b28dd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/c89592/00000000000000003b9b28dd/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/c89592/00000000000000003b9b28dd/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display:auto;font-style:normal;font-weight:400;
 }
+
+.tk-aw-conqueror-carved { font-family: "aw-conqueror-carved",sans-serif; }
 
 @keyframes spinAround {
   from {
@@ -3863,7 +3867,7 @@ html, body {
 .navbar-item-home,
 .navbar-end {
   text-transform: uppercase;
-  font-family: aw-conqueror-carved, "Arial Rounded MT Bold";
+  font-family: "aw-conqueror-carved", "Arial Rounded MT Bold";
   color: #fff; }
 
 .navbar-menu {
@@ -3892,7 +3896,7 @@ h1.title,
 h2.title,
 h3.title {
   text-transform: uppercase;
-  font-family: aw-conqueror-carved; }
+  font-family: "aw-conqueror-carved", sans-serif; }
 
 .title.is-2,
 .title.is-3,
