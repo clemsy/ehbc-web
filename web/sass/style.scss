@@ -10,6 +10,7 @@
 // Set your brand colors
 $orange: #f6ea39;
 $pink: black;
+$black: black;
 $brown: #4d4f42;
 $green: #006f37;
 $beige-light: #ffffff;
@@ -21,6 +22,7 @@ $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $orange;
 $link: $orange;
+
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
@@ -48,7 +50,7 @@ $input-shadow: none;
 
 
 html, body {
-  background-color: linear-gradient($orange, #B17235);
+  background-color: linear-gradient($orange, $black);
 }
 $navbar-dropdown-border-top: 0;
 $navbar-dropdown-item-hover-background-color: black;
