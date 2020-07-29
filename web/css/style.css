@@ -3893,6 +3893,10 @@ nav a:hover span {
   color: #f6ea39;
   background-color: black; }
 
+section.section a {
+  display: inline-block;
+  background-color: black; }
+
 h1.title,
 h2.title,
 h3.title {
