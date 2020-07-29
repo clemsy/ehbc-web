@@ -3928,4 +3928,5 @@ h3.title {
 div.page-content a {
   display: inline-block;
   background-color: black;
-  color: #f6ea39; }
+  color: #f6ea39;
+  padding: 0 1em; }
