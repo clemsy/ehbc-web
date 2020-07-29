@@ -132,5 +132,12 @@ div.page-content a {
   display: inline-block;
   background-color: black;
   color: $yellow;
-  padding: 0 1em;
+  padding: 0 3px;
+}
+
+div.page-content a {
+  display: inline-block;
+  background-color: $brown;
+  color: $orange;
+  padding: 0 3px;
 }

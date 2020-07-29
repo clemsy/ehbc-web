@@ -3929,4 +3929,10 @@ div.page-content a {
   display: inline-block;
   background-color: black;
   color: #f6ea39;
-  padding: 0 1em; }
+  padding: 0 3px; }
+
+div.page-content a {
+  display: inline-block;
+  background-color: #4d4f42;
+  color: #f6ce0c;
+  padding: 0 3px; }
