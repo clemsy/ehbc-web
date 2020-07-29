@@ -115,9 +115,14 @@ h3.title
   border-color: $orange;
 }
 
+.navbar-dropdown a.navbar-item {
+    font-family: Helvetica, sans-serif;
+    color: $yellow;
+
+}
 .navbar-dropdown a.navbar-item:focus,
 .navbar-dropdown a.navbar-item:hover {
   font-family: Helvetica, sans-serif;
-  color: $yellow;
+  color: $orange;
   background-color: #000000;
 }
