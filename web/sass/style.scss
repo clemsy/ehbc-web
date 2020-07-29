@@ -87,10 +87,6 @@ nav a:hover span {
   background-color: black;
 }
 
-section.section a {
-  display: inline-block;
-  background-color: black;
-}
 h1.title,
 h2.title,
 h3.title
@@ -129,4 +125,11 @@ h3.title
   font-family: Helvetica, sans-serif;
   color: $orange;
   background-color: #000000;
+}
+
+
+div.page-content a {
+  display: inline-block;
+  background-color: black;
+  color: $yellow;
 }
