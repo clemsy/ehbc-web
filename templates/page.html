@@ -18,17 +18,20 @@
             {{entry.sectionTitle}}
         </h1>
         {% endif %}
+
+
+        {% if requestedSlug == 'locations' %}
+        <hr>
+        <iframe src="https://www.google.com/maps/d/embed?mid=1pOG8AlzgaFUtnwTrtzJuDjZ8vgdh1vji" width="100%" height="600" style="min-width: 100%;width: 100%;height:600px"></iframe>
+        {% endif %}
+
+        
         <div class="content has-text-left">
             {{entry.pageContent|raw}}
         </div>
 
 
     </div>
-    {% if requestedSlug == 'locations' %}
-    <hr>
-    <iframe src="https://www.google.com/maps/d/embed?mid=1pOG8AlzgaFUtnwTrtzJuDjZ8vgdh1vji" width="100%" height="600" style="min-width: 100%;width: 100%;height:600px"></iframe>
-    {% endif %}
-
     {% if requestedSlug == 'contact-us' %}
     <hr>
     {% include '_contact' %}
