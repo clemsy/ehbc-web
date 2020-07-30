@@ -231,7 +231,7 @@
 
 
 
-        <h3 class="title is-2" style="margin-top: 1rem">Section 2, Reffing:</h3>
+        <h3 class="title is-2" style="margin-top: 1rem">Reffing:</h3>
         <p>
             The tournament will not work without Referees. We ask all teams to take part!
         </p>
@@ -260,42 +260,107 @@
 
         <p>
             Munich bike polo would greatly apreciate any help with the setup and  pull down of the court.
-
         </p>
+
         <div class="field ">
             <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamVolunteering">Do you want to help us?</label>
+                <label class="label has-text-left" for="teamcourtsetup">Who from your team will be able to assist with court setup on Monday (7/9/20)</label>
             </div>
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="" id="teamVolunteering" name="fields[teamVolunteering]" {% if entry is defined %} value="{{ entry.teamVolunteering }}"{% endif %}>
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamcourtsetup" name="fields[teamcourtsetup]" rows="6">
+                            {% if entry is defined %} {{ entry.teamcourtsetup }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamCourtPullDown">Who from your team will be able to assist with court pull down on Sunday (13/9/20)</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamCourtPullDown" name="fields[teamCourtPullDown]" rows="6">
+                            {% if entry is defined %} {{ entry.teamCourtPullDown }}{% endif %}</textarea>
                     </p>
                 </div>
             </div>
         </div>
 
 
-    
+        <p>
+            In the event of a low subscribption, it it possible that the main event will begin a day earlier.
+        </p>
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamAvailableFromWednesday">Will your team be available to play on Wednesday (9/9/20)?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamAvailableFromWednesday" name="fields[teamAvailableFromWednesday]" rows="6">
+                            {% if entry is defined %} {{ entry.teamAvailableFromWednesday }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <p>
+            We are required to inform the city of total numbers, and  to have contact  details of all attendees. This includes acompayning friends and family.
+        </p>
+
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamAccompany">If others may be joining  you please let us  know  here:</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamAccompany" name="fields[teamAccompany]" rows="6">
+                            {% if entry is defined %} {{ entry.teamAccompany }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
 
         <p>
         <hr>
         </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 4, Food:</h3>
+        <h3 class="title is-2" style="margin-top: 1rem"> Food:</h3>
 
+        <div class="field ">
+            <div class="field-label is-normal">
+                <label class="label has-text-left" for="teamDiatery">Does anyone from  your team have any dietary requirements?</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <p class="control">
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamDiatery" name="fields[teamDiatery]" rows="6">
+                            {% if entry is defined %} {{ entry.teamDiatery }}{% endif %}</textarea>
+                    </p>
+                </div>
+            </div>
+        </div>
 
 
         <p>
         <hr>
         </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 5, Comments:</h3>
-
-
-        <p>
-        <hr>
-        </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 8, Comments:</h3>
+        <h3 class="title is-2" style="margin-top: 1rem"> Comments:</h3>
 
         <div class="field ">
             <div class="field-label is-normal">
