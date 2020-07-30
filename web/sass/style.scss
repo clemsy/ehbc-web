@@ -10,6 +10,7 @@
 // Set your brand colors
 $orange: #f6ce0c;
 $yellow: #f6ea39;
+$blue: #4935ff;
 $pink: black;
 $black: black;
 $brown: #4d4f42;
@@ -22,7 +23,7 @@ $family-sans-serif: "Helvetica", sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $yellow;
-$link: $yellow;
+$link: $blue;
 
 $widescreen-enabled: false;
 $fullhd-enabled: false;
@@ -130,14 +131,12 @@ h3.title
 
 div.page-content a {
   display: inline-block;
-  background-color: black;
-  color: $yellow;
+  background-color: none;
+  color: $blue;
   padding: 0 3px;
 }
 
 div.page-content a:hover {
-  display: inline-block;
-  background-color: $brown;
-  color: $orange;
-  padding: 0 3px;
+  background-color: $yellow;
+  color: $black;
 }
