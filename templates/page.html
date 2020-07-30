@@ -24,6 +24,11 @@
 
 
     </div>
+    {% if requestedSlug == 'locations' %}
+    <hr>
+    <iframe src="https://www.google.com/maps/d/embed?mid=1pOG8AlzgaFUtnwTrtzJuDjZ8vgdh1vji" width="640" height="480"></iframe>
+    {% endif %}
+
     {% if requestedSlug == 'contact-us' %}
     <hr>
     {% include '_contact' %}
