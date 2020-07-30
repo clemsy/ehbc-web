@@ -158,7 +158,7 @@
         <!-- player name -->
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label" for="player{{player}}Name"> Contact (email and Phone)</label>
+                <label class="label" for="player{{player}}Name"> Contact <small class="is-small"> (email and Phone)</small></label>
             </div>
             <div class="field-body">
 
@@ -255,11 +255,12 @@
         <p>
         <hr>
         </p>
-        <h3 class="title is-3" style="margin-top: 1rem">Volunteering:</h3>
+
+        <h3 class="title is-2" style="margin-top: 1rem">Section 3, Travel:</h3>
+
         <p>
-            If you want to volunteer in the event, please let us know what you can do.
-            <br>
-            We will award helpers with tokens for food and drinks. More infos <a href="/ehbc/food" target="_blank"><strong>here</strong></a>.
+            Munich bike polo would greatly apreciate any help with the setup and  pull down of the court.
+
         </p>
         <div class="field ">
             <div class="field-label is-normal">
@@ -274,172 +275,21 @@
             </div>
         </div>
 
-        <p>
-        <hr>
-        </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 3, Travel:</h3>
 
-        <p>
-            We give a discount on Main Event (45€/PP instead of 75€/PP) and on Wildcard Event (10€/PP instead of 15€/PP), for every player who travels to EHBC in an environementally freindly way:
-        <ul>
-            <li>By train</li>
-            <li>By bus</li>
-            <li>By carpool (fill it up with as many people as you can)</li>
-        </ul>
-        </p>
-        <p class="has-text-weight-bold">
-            No discount will be given if you travel by plane, or alone by car!
-        </p>
-        <div class="field ">
-        <div class="field-label is-normal">
-            <label class="label has-text-left">Players travling environmentally friendly:</label>
-        </div>
-        <div class="field-body">
-            <div class="field">
-                <p class="control">
-
-                    <label class="checkbox">
-                        <input  type="checkbox" placeholder="" id="player1" name="fields[teamPlayerOneIsTravelingByTrain]" value="1">
-                            Player 1
-                    </label>
-                    <br>
-                    <label class="checkbox">
-                        <input  type="checkbox" placeholder="" id="player2" name="fields[teamPlayerTwoIsTravelingByTrain]" value="1">
-                            Player 2
-                    </label>
-                    <br>
-                    <label class="checkbox">
-                        <input  type="checkbox" placeholder="" id="player3" name="fields[teamPlayerThreeIsTravelingByTrain]" value="1">
-                            Player 3
-                    </label>
-                    <br>
-                </p>
-            </div>
-        </div>
     </div>
 
+
         <p>
         <hr>
         </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 4, Accomodation:</h3>
-        <p>
-            There are different accommodation options, which you can find <a href="/ehbc/accommodation" target="_blank"><strong>here</strong></a>.
-            <br>
-            Please have a look and let us know what you prefer.
-            <br>
-            <b>Note that places are limited!</b> If you need accommodation for more people or have questions please comment below.        </p>
-
-
-        {% for k, player in [1,2,3] %}
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label" for="teamPlayer{{player}}Accommodation">Player {{player}}</label>
-            </div>
-            <div class="field-body">
-                <div class="field is-narrow">
-                    <div class="control">
-                        <div class="select is-fullwidth">
-                            <select required aria-required="true" name="fields[teamPlayer{{player}}Accommodation]" id="teamPlayer{{player}}Accommodation">
-                                <option value="">Select Housing Option</option>
-                                <option value="pfadihuus">Pfadihuus</option>
-                                <option value="gym">Gym</option>
-                                <option value="noHousing">No Housing</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-
-        <div class="field ">
-            <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamHousingComment">Any comment on housing?</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" type="text" placeholder="" id="teamHousingComment" name="fields[teamHousingComment]" rows="6">{% if entry is defined %} {{ entry.teamHousingComment }}{% endif %}</textarea>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <h3 class="title is-2" style="margin-top: 1rem">Section 4, Food:</h3>
 
 
 
         <p>
         <hr>
         </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 5, World Championships:</h3>
-        <p>
-            Teams for WHBPC will have to pre-register before EHBC!
-            <br>
-            Please let us know which players from your team want to play in WHBPC 2019 Cordoba.
-            <br>
-            This is to know for us who to have on the radar. We will send you a reminder for pre-registration!
-
-        </p>
-
-        <div class="field ">
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" type="text" placeholder="" id="teamWhbpcComment" name="fields[teamWhbpcComment]" rows="6">
-                            {% if entry is defined %} {{ entry.teamWhbpcComment }}{% endif %}</textarea>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <p>
-        <hr>
-        </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 6, Tokens Pre Order:</h3>
-        <p>
-            You can buy tokens for 20% cheaper here than on the event location.
-            <br>
-            One token is 1.5€ and gets you a small drink! More infos <a href="/ehbc/food" target="_blank"><strong>here</strong></a>.
-        </p>
-
-        <div class="field ">
-            <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamPreOrderTokens">Please let us know how many tokens you want to pre-order for your team!</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" type="text" placeholder="" id="teamPreOrderTokens" name="fields[teamPreOrderTokens]" rows="6">
-                            {% if entry is defined %} {{ entry.teamPreOrderTokens }}{% endif %}</textarea>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <p>
-        <hr>
-        </p>
-        <h3 class="title is-2" style="margin-top: 1rem">Section 7, Tee Shirts Pre Order:</h3>
-        <p>
-            You can pre-order event T-shirts for 14€ each. They are unisex and available from S to XXL.
-
-        </p>
-
-        <div class="field ">
-            <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamPreOrderTeeShirts">I want to order the following T-shirts:</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                    <p class="control">
-                        <textarea class="textarea" type="text" placeholder="" id="teamPreOrderTeeShirts" name="fields[teamPreOrderTeeShirts]" rows="6">
-                            {% if entry is defined %} {{ entry.teamPreOrderTeeShirts }}{% endif %}</textarea>
-                    </p>
-                </div>
-            </div>
-        </div>
-
+        <h3 class="title is-2" style="margin-top: 1rem">Section 5, Comments:</h3>
 
 
         <p>
