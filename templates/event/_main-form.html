@@ -137,7 +137,7 @@
         </div>
         #}
 
-        {% for k, player in [1,2,3] %}
+        {% for k, player in [1,2,3,4] %}
         <hr>
         <h3 class="title is-4">Player {{player}} Info</h3>
 
@@ -151,6 +151,20 @@
                 <div class="field">
                     <p class="control">
                         <input required class="input" type="text" placeholder="Player {{player}} Name" id="player{{player}}Name" name="fields[teamPlayer{{player}}Name]" >
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- player name -->
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label" for="player{{player}}Name"> Contact (email and Phone)</label>
+            </div>
+            <div class="field-body">
+
+                <div class="field">
+                    <p class="control">
+                        <input required class="input" type="text" placeholder="Player {{player}} Contact" id="player{{player}}Contact" name="fields[teamPlayer{{player}}Contact]" >
                     </p>
                 </div>
             </div>
@@ -223,12 +237,16 @@
         </p>
         <div class="field ">
             <div class="field-label is-normal">
-                <label class="label has-text-left" for="teamRefereree">Who is/are the most experienced Referee/s in your team?</label>
+                <label class="label has-text-left" for="teamRefereree">Who will help with reffing? and in what capacity? ( main/assistant/Marshall)
+                </label>
             </div>
             <div class="field-body">
                 <div class="field">
                     <p class="control">
-                        <input required class="input" type="text" placeholder="You have to name somebody!!" id="teamRefereree" name="fields[teamRefereree]" {% if entry is defined %} value="{{ entry.teamRefereree }}"{% endif %}>
+
+                        <textarea class="textarea" type="text" placeholder="" id="teamRefereree" name="fields[teamRefereree]" rows="6">
+                            {% if entry is defined %} {{ entry.teamRefereree }}{% endif %}</textarea>
+
                     </p>
                 </div>
             </div>
