@@ -159,13 +159,16 @@
         <!-- player name -->
         <div class="field is-horizontal">
             <div class="field-label is-normal">
-                <label class="label" for="player{{player}}Name"> Contact <small class="is-small"> (email and Phone)</small></label>
+                <label class="label" for="player{{player}}Name"> Contact </label>
             </div>
             <div class="field-body">
 
                 <div class="field">
                     <p class="control">
                         <input required class="input" type="text" placeholder="Player {{player}} Contact" id="player{{player}}Contact" name="fields[teamPlayer{{player}}Contact]" >
+                    </p>
+                    <p class="is-small">
+                        <small class="is-small">Please enter email and phone (international format)</small>
                     </p>
                 </div>
             </div>
