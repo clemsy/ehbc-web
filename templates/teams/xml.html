@@ -2,6 +2,7 @@
 {% header "Content-Description: File Transfer" %}
 {% set teams =  craft.entries().section('teams').orderBy('dateCreated ASC').all() %}
 {% block content %}
+{% if currentUser %}
 {% autoescape %}
 <?xml version="1.0" encoding="UTF-8"?>
 <teams>
@@ -38,4 +39,5 @@
     {% endfor %}
 </teams>
 {% endautoescape %}
+{% endif %}
 {% endblock %}
